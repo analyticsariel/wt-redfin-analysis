@@ -11,7 +11,7 @@ def additional_bedroom_opportunity(x):
     # 2bd >= 1300 can usually fit an additional bd
     # 3bd >= 1950 can usually fit an additional bd
     # 4bd >= 2600 can usually fit an additional bd
-    if (x['ratio_sqft_bd'] >= 650) and (x['BEDS'] > 1) and (x['PROPERTY TYPE'] == 'Single Family Residential'):
+    if (x['ratio_sqft_bd'] >= 650) and (x['ratio_sqft_bd'] is not None) and (x['BEDS'] > 1) and (x['PROPERTY TYPE'] == 'Single Family Residential'):
       return True
     else:
       return False
@@ -22,7 +22,7 @@ def additional_bedroom_opportunity(x):
 
 def adu_potential(x):
   try:
-    if (x['ratio_lot_sqft'] >= 5) and (x['HOA/MONTH'] is not None) and (x['PROPERTY TYPE'] == 'Single Family Residential'):
+    if (x['ratio_lot_sqft'] >= 5) and (x['ratio_lot_sqft'] is not None) and (x['HOA/MONTH'] is not None) and (x['PROPERTY TYPE'] == 'Single Family Residential'):
       return True
     else:
       return False
