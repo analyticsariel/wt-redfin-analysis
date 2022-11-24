@@ -99,6 +99,7 @@ if uploaded_file is not None:
         st.markdown("#### Featurized Dataset")
         st.write(df_features)
 
+        # convert featurized dataset to csv
         csv = convert_df(df_features)
 
         st.download_button(
